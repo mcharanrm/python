@@ -39,6 +39,27 @@ slicing	[0:4:]
 	[2:6:]
 '''
 #n=0;c=2;array=list();array.extend(string)
+from functools import reduce
+
+
+def game_minion_substrings():
+        c_array=list();v_array=list()
+        n=0;c=2;array.extend(string)
+        while n<len(string):
+                i=0;j=c
+                while i<len(string) and j<=len(string):
+                        array.append(''.join(string[i:j:]))
+                        i+=1;j+=1
+                n+=1;c+=1
+        v_array=[x for x in array if x[0] in list('AEIOU')]
+        c_array=[x for x in array if x[0] not in  list('AEIOU')]
+        if len(v_array)==len(c_array):
+                print('{}'.format('Draw'))
+        elif len(v_array)>len(c_array):
+                print('{} {}'.format('Kevin',len(v_array)))
+        else:
+                print('{} {}'.format('Stuart',len(c_array)))
+
 
 def game_minion(string):
 	n=0;c=2;array.extend(string)
@@ -50,19 +71,6 @@ def game_minion(string):
 				s=s+char
 			array.append(s)
 			i+=1;j+=1;k+=1
-		n+=1;c+=1
-
-
-def game_minion_substrings():
-	n=0;c=2;array.extend(string)
-	while n<len(string):
-		i=0;j=c
-		while i<len(string) and j<=len(string):
-		#	s=''
-		#	for char in string[i:j:]:
-			array.append(''.join(string[i:j:]))
-		#	array.append(s)
-			i+=1;j+=1
 		n+=1;c+=1
 
 
@@ -101,9 +109,9 @@ def game_multiuser_play():
 		
 if globals()['__name__']=='__main__':
 	array=list()
-	p_1=input('Enter player name: ').strip().upper()
-	p_2=input('Enter player-2 name: ').strip().upper()
+#	p_1=input('Enter player name: ').strip().upper()
+#	p_2=input('Enter player-2 name: ').strip().upper()
 	string=input('Enter a string: ').strip().upper()
 	game_minion_substrings()
 #	game_singleuser_play()
-	game_multiuser_play()	
+#	game_multiuser_play()	
