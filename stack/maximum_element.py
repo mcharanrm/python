@@ -9,34 +9,14 @@ after performing few queries
 #https://www.hackerrank.com/challenges/maximum-element/problem
 
 
-def maximum_element(n):
-	array=list()
-	array_op=list()
-	for i in range(n):
-		x,*y=tuple(map(int,input().strip().split()))
-		if x==1:	array.append(y[0])
-		if x==2:	array.pop()
-		if x==3:
-			max_e=array[0]
-			for j in array:
-				if max_e<j:	max_e=j
-			array_op.append(max_e)
-
-	for i in array_op:
-		print(i)	
-
 
 def maximum_element_modified(n):	#saving time from finding max_element
-	array=list()
-	array_op=list()
+	stack=list()
 	for i in range(n):
 		x,*y=tuple(map(int,input().strip().split()))
-		if x==1:        array.append(y[0])
-		if x==2:        array.pop()
-		if x==3:	tmp=array.copy();tmp.sort(reverse=True);array_op.append(tmp[0])
-
-	for i in array_op:
-		print(i)
+		if x==1:        stack.append(y[0])
+		if x==2:        stack.pop()
+		if x==3:	print(max(stack))
 
 		
 
