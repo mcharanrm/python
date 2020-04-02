@@ -8,21 +8,18 @@ def merge_tools(s,k):
 		for l in range(ti):
 			sub_string=s[(k*l):(k*(l+1)):]
 			i=0;j=0
-			tmp=''
-			while i<k-1:
+			ui=k
+			while i<ui-1:
 				j=i+1
-				while j<k:
+				while j<ui:
 					if sub_string[i]!=sub_string[j]:
 						j+=1
 					else:
-						break
-				if j==k:
-					pass
-					tmp+=sub_string[i]
+						sub_string=sub_string[:j:]+sub_string[(j+1)::]
+						ui-=1
 				i+=1
+			yield sub_string
 
-			tmp+=sub_string[i]
-			yield tmp
 	merge_work(s,k)
 	result=merge_work(s,k)
 	for valid_strings in result:
