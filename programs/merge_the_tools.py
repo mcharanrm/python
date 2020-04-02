@@ -7,24 +7,26 @@ def merge_tools(s,k):
 		ti=n//k		#no.of times either for or while loop has to execute
 		for l in range(ti):
 			sub_string=s[(k*l):(k*(l+1)):]
-			lb=k*l
-			ub=k*(l+1)
-			i=0;j=1
+			i=0;j=0
 			tmp=''
-			while i<k-1 and j<k:
-				if sub_string[i]!=sub_string[j]:
+			while i<k-1:
+				j=i+1
+				while j<k:
+					if sub_string[i]!=sub_string[j]:
+						j+=1
+					else:
+						break
+				if j==k:
+					pass
 					tmp+=sub_string[i]
-					i+=1
-					j+=1
-				else:
-					i+=1
-					j+=1
-			tmp+=sub_string[i]	#add the final index value of the sub_string
+				i+=1
+
+			tmp+=sub_string[i]
 			yield tmp
+	merge_work(s,k)
 	result=merge_work(s,k)
 	for valid_strings in result:
 		print(valid_strings)
-
 
 
 
