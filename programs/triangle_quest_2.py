@@ -23,7 +23,7 @@ Steps:
 	i=3							i=4
 	1*(10**4)+2*(10**3)+3*(10**2)+2*(10**1)+1*(10**0)	1*(10**6)+2*(10**5)+3*(10**4)+4*(10**3)+3*(10**2)+2*(10**1)+1*(10**0)
 
-4.simplify expression even further [eg: 2*(10**1) == 20 == (10**1) * (10**1)]
+4.simplify expression even further [eg: 2*(10**1) == 20 == (10**1) + (10**1)]
 5.Write in a colum-major order to understand	[ All terms in Geometri Progression ] [ sum of n-terms An=a*(r**n - 1)  ]
 													  ------------
 													     r-1
